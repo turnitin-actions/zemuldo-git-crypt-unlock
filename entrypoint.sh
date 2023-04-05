@@ -12,6 +12,8 @@ if [ "$GPG_KEY_PASS" != "" ]; then
 /usr/libexec/gpg-preset-passphrase --preset --passphrase "$GPG_KEY_PASS" "$GPG_KEY_GRIP"
 fi
 
+git config --global --add safe.directory /github/workspace
+
 git-crypt unlock
 
 rm "$HOME"/git-crypt-key.asc
