@@ -8,7 +8,7 @@ LABEL "com.github.actions.color"="red"
 LABEL "com.github.actions.name"="Git-Crypt Unlock"
 LABEL "com.github.actions.description"="Action to Unlock files encrypted using Git-Crypt, supports keys with passphrase"
 
-RUN apk add --update git-crypt && rm -rf /var/cache/apk/*
+RUN apk add --update git-crypt gpg gpg-agent && rm -rf /var/cache/apk/*
 
 COPY LICENSE README.md /
 
